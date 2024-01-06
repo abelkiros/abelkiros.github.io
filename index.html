@@ -1,37 +1,61 @@
 <!DOCTYPE HTML>
 <!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Stellar by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Abel's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Abel's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Additional CSS for responsive navigation */
+        @media only screen and (max-width: 768px) {
+            /* CSS styles for mobile screens */
+            /* Example: Make the navigation items display vertically */
+            #nav ul {
+                display: block;
+                text-align: center;
+                padding: 0;
+            }
+            #nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+            #nav ul li a {
+                display: inline-block;
+                padding: 5px 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- Wrapper -->
+<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1>Abel Mengesha Kiros</h1>
-						<p>አቤል ኪሮስ<br />
-					</header>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1>Abel Mengesha Kiros</h1>
+        <p>አቤል ኪሮስ<br />
+		
+    </header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">About Me</a></li>
-							<li><a href="generic.html">Projects</a></li>
-							<li><a href="generic2.html">Resume</a></li>
-							<li><a href="#cta">Contact</a></li>
-						</ul>
-					</nav>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="#intro" class="active">About Me</a></li>
+            <li><a href="generic.html">Projects</a></li>
+            <li><a href="generic2.html">Resume</a></li>
+            <li><a href="#cta">Contact</a></li>
+        </ul>
+    </nav>
+
 
 				<!-- Main -->
 					<div id="main">
@@ -68,6 +92,8 @@
 										<li><a href="https://www.linkedin.com/in/abelkiros/" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
 										<li><a href="https://github.com/abelkiros" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
 										<li><a href ="https://medium.com/@abel.m.kiros ">My Blog</a></li>
+										<li><a href="generic.html">Projects</a></li>
+										<li><a href="generic2.html">Resume</a></li>
 										
 									</ul>
 								</footer>
@@ -90,6 +116,17 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- JavaScript to include the navigation -->
+		<script>
+    		// Fetch and include the navigation HTML file
+    		fetch('nav.html')
+        		.then(response => response.text())
+        		.then(html => {
+            		document.getElementById('nav-placeholder').innerHTML = html;
+        		})
+        		.catch(error => console.error('Error fetching navigation:', error));
+		</script>
 
 	</body>
 </html>
