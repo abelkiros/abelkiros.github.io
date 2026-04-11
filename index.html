@@ -1,157 +1,1379 @@
-<!DOCTYPE HTML>
-<!--
-    Stellar by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Abel's Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <style>
-        /* Additional CSS for responsive navigation */
-        @media only screen and (max-width: 768px) {
-            /* CSS styles for mobile screens */
-            /* Example: Make the navigation items display vertically */
-            #nav ul {
-                display: block;
-                text-align: center;
-                padding: 0;
-            }
-            #nav ul li {
-                display: block;
-                margin-bottom: 10px;
-            }
-            #nav ul li a {
-                display: inline-block;
-                padding: 5px 10px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Abel Mengesha Kiros — IT professional and aspiring cybersecurity engineer based in Rochester, NY. Customer Technology Support Technician at URMC, B.S. Cybersecurity student at WGU." />
+<title>Abel Mengesha Kiros — Heart of a Lion</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script>
+// Applied before CSS paints to prevent flash of wrong theme
+(function() {
+  try {
+    const stored = localStorage.getItem('abel-theme');
+    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const theme = stored || (systemPrefersLight ? 'light' : 'dark');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch(e) {}
+})();
+</script>
+
+<style>
+/* ===================================================================
+   VARIABLES — DARK MODE (default)
+   =================================================================== */
+:root {
+  --bg: #0a0a0a;
+  --bg-elev: #111111;
+  --bg-card: #141414;
+  --border: #1f1f1f;
+  --border-hover: #2f2f2f;
+  --text: #f5f5f0;
+  --text-dim: #9a9a95;
+  --text-faint: #5f5f5a;
+
+  --green: #078930;     /* Ethiopian green */
+  --yellow: #FCDD09;    /* Ethiopian yellow */
+  --red: #DA121A;       /* Ethiopian red */
+  --accent-emphasis: var(--yellow);  /* color used for <em> highlights */
+
+  --green-soft: rgba(7, 137, 48, 0.15);
+  --yellow-soft: rgba(252, 221, 9, 0.12);
+  --red-soft: rgba(218, 18, 26, 0.12);
+
+  --grain-opacity: 0.035;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --container: 1200px;
+  --section-gap: clamp(5rem, 10vw, 9rem);
+}
+
+/* ===================================================================
+   VARIABLES — LIGHT MODE
+   =================================================================== */
+:root[data-theme="light"] {
+  --bg: #fafaf7;
+  --bg-elev: #f2f1ec;
+  --bg-card: #ffffff;
+  --border: #e5e3dc;
+  --border-hover: #d0cec5;
+  --text: #111111;
+  --text-dim: #555550;
+  --text-faint: #8a8880;
+
+  --green: #055f21;     /* deeper green for contrast on white */
+  --yellow: #b8860b;    /* darker yellow (goldenrod) — readable on white */
+  --red: #b8121a;       /* slightly deeper red */
+  --accent-emphasis: var(--red);  /* red reads better on white than yellow */
+
+  --green-soft: rgba(5, 95, 33, 0.08);
+  --yellow-soft: rgba(184, 134, 11, 0.08);
+  --red-soft: rgba(184, 18, 26, 0.06);
+
+  --grain-opacity: 0.025;
+}
+
+/* Smooth theme transition */
+html, body, nav, .cert-card, .edu-item, .skill-tag, .contact-link, .btn {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ===================================================================
+   RESET
+   =================================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  font-size: 17px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ===================================================================
+   LAYOUT
+   =================================================================== */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem);
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  padding: var(--section-gap) 0;
+  position: relative;
+}
+
+/* ===================================================================
+   NAV
+   =================================================================== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background-color 0.4s;
+}
+nav.scrolled { border-bottom-color: var(--border); }
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+.nav-logo span { color: var(--green); }
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+.nav-links a {
+  color: var(--text-dim);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 1px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ===================================================================
+   HERO
+   =================================================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, var(--green-soft) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-inner { position: relative; z-index: 2; width: 100%; }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.1s forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--green);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3.5rem, 10vw, 8.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.25s forwards;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent-emphasis);
+}
+.hero-amharic {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  color: var(--text-dim);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  animation: fadeUp 1s 0.45s forwards;
+}
+.hero-tagline {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--text-dim);
+  max-width: 640px;
+  margin-bottom: 3rem;
+  line-height: 1.55;
+  opacity: 0;
+  animation: fadeUp 1s 0.6s forwards;
+}
+.hero-tagline strong { color: var(--text); font-weight: 500; }
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1s 0.75s forwards;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #ffffff;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--green);
+  transform: translateY(-2px);
+}
+.btn-secondary:hover {
+  border-color: var(--text);
+  transform: translateY(-2px);
+}
+.btn::after { content: '→'; font-size: 1rem; }
+
+.hero-flag {
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  opacity: 0;
+  animation: fadeIn 1s 1s forwards;
+}
+.hero-flag .stripes {
+  display: flex;
+  width: 60px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 1px;
+}
+.hero-flag .stripes span { flex: 1; }
+.hero-flag .stripes span:nth-child(1) { background: var(--green); }
+.hero-flag .stripes span:nth-child(2) { background: var(--yellow); }
+.hero-flag .stripes span:nth-child(3) { background: var(--red); }
+@media (max-width: 720px) {
+  .hero-flag { display: none; }
+}
+
+/* ===================================================================
+   SECTION HEADERS
+   =================================================================== */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.section-label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--green);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: 3rem;
+  max-width: 900px;
+}
+.section-title em { font-style: italic; color: var(--accent-emphasis); }
+
+/* ===================================================================
+   ABOUT
+   =================================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+.about-meta {
+  position: sticky;
+  top: 8rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.about-meta dt {
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  margin-top: 1.5rem;
+}
+.about-meta dt:first-child { margin-top: 0; }
+.about-meta dd { color: var(--text); margin-top: 0.35rem; line-height: 1.5; }
+.about-body p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-dim);
+  margin-bottom: 1.4rem;
+}
+.about-body p strong { color: var(--text); font-weight: 500; }
+
+/* ===================================================================
+   MOTIVATION
+   =================================================================== */
+.motivation {
+  background: linear-gradient(180deg, transparent 0%, var(--bg-elev) 20%, var(--bg-elev) 80%, transparent 100%);
+}
+.motivation-inner {
+  max-width: 780px;
+}
+.motivation-inner p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+  margin-bottom: 1.6rem;
+}
+.motivation-inner p strong { color: var(--text); font-weight: 500; }
+
+/* ===================================================================
+   HEART OF A LION
+   =================================================================== */
+.lion {
+  position: relative;
+}
+.lion::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--yellow-soft), transparent);
+  pointer-events: none;
+}
+.lion-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.lion-header h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.lion-header .amharic {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--accent-emphasis);
+}
+.lion-body {
+  max-width: 720px;
+  position: relative;
+}
+.lion-body p {
+  font-size: 1.18rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 1.8rem;
+}
+.lion-body p:first-of-type {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+.lion-body .amharic-inline {
+  font-family: var(--font-display);
+  color: var(--accent-emphasis);
+  font-style: italic;
+}
+.lion-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--accent-emphasis);
+  color: var(--accent-emphasis);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.lion-cta:hover {
+  background: var(--accent-emphasis);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+.lion-cta::after { content: '→'; }
+
+/* ===================================================================
+   EXPERIENCE
+   =================================================================== */
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  transition: background 0.3s;
+}
+.exp-item:last-child { border-bottom: 1px solid var(--border); }
+.exp-item:hover { background: rgba(7, 137, 48, 0.025); }
+@media (max-width: 800px) {
+  .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+}
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  padding-top: 0.4rem;
+}
+.exp-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+.exp-company {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
+}
+.exp-bullets {
+  list-style: none;
+}
+.exp-bullets li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+.exp-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 8px;
+  height: 1px;
+  background: var(--text-faint);
+}
+.exp-bullets li strong { color: var(--text); font-weight: 500; }
+
+/* ===================================================================
+   CERTIFICATIONS
+   =================================================================== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.cert-card {
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.cert-card:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.cert-card:hover::before { transform: scaleX(1); }
+.cert-status {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.6rem;
+}
+.cert-status.in-progress { color: var(--accent-emphasis); }
+.cert-status.planned { color: var(--text-faint); }
+.cert-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+/* ===================================================================
+   PROJECTS
+   =================================================================== */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.project {
+  padding: 2.75rem 0;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2.5rem;
+  align-items: start;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.project:last-child { border-bottom: 1px solid var(--border); }
+.project:hover {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.project:hover .project-number { color: var(--green); }
+.project:hover .project-name { color: var(--green); }
+@media (max-width: 800px) {
+  .project { grid-template-columns: auto 1fr; gap: 1.5rem; }
+  .project-link { grid-column: 1 / -1; }
+}
+.project-number {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-faint);
+  padding-top: 0.5rem;
+  transition: color 0.3s;
+}
+.project-main { min-width: 0; }
+.project-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+  transition: color 0.3s;
+}
+.project-tools {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+.project-desc {
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 620px;
+}
+.project-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-top: 0.6rem;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.project:hover .project-link { color: var(--green); }
+.project-link::after { content: ' →'; }
+
+/* ===================================================================
+   SKILLS
+   =================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+.skill-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.9rem;
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.skill-tag {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text);
+  transition: all 0.2s;
+}
+.skill-tag:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* ===================================================================
+   EDUCATION
+   =================================================================== */
+.edu-list { display: flex; flex-direction: column; gap: 2rem; }
+.edu-item {
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  transition: border-color 0.25s;
+}
+.edu-item:hover { border-color: var(--green); }
+@media (max-width: 600px) {
+  .edu-item { grid-template-columns: 1fr; }
+}
+.edu-degree {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+}
+.edu-school {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--green);
+  margin-bottom: 0.4rem;
+}
+.edu-detail { color: var(--text-dim); font-size: 0.95rem; }
+.edu-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* ===================================================================
+   CONTACT
+   =================================================================== */
+.contact {
+  text-align: center;
+  padding: calc(var(--section-gap) * 1.2) 0;
+  position: relative;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(circle, var(--green-soft) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+.contact > .container { position: relative; z-index: 2; }
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+.contact-title em { font-style: italic; color: var(--accent-emphasis); }
+.contact-text {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.8rem;
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+.contact-link:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-2px);
+}
+.contact-link svg { width: 16px; height: 16px; }
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-flag { display: flex; gap: 0.25rem; align-items: center; }
+.footer-flag span { width: 10px; height: 10px; border-radius: 50%; }
+.footer-flag span:nth-child(1) { background: var(--green); }
+.footer-flag span:nth-child(2) { background: var(--yellow); }
+.footer-flag span:nth-child(3) { background: var(--red); }
+
+/* ===================================================================
+   THEME TOGGLE
+   =================================================================== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1.25rem;
+  border-radius: 2px;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.theme-toggle:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-1px);
+}
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  position: absolute;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+.theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+:root[data-theme="light"] .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg) scale(0.6); }
+:root[data-theme="light"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+@media (max-width: 720px) {
+  .theme-toggle { margin-left: auto; }
+}
+
+/* ===================================================================
+   ANIMATIONS
+   =================================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================================================
+   SELECTION
+   =================================================================== */
+::selection {
+  background: var(--green);
+  color: #ffffff;
+}
+</style>
 </head>
-<body class="is-preload">
+<body>
 
-<!-- Wrapper -->
-<div id="wrapper">
+<!-- ========== NAV ========== -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-logo">abel<span>.</span>kiros</div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#lion">Journey</a></li>
+        <li><a href="#experience">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle light / dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
 
-    <!-- Header -->
-    <header id="header" class="alt">
-        <h1>Abel Mengesha Kiros</h1>
-        <p>አቤል ኪሮስ<br />
-		
-    </header>
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Rochester, NY · Customer Tech Support · URMC</div>
+      <h1>Abel <em>Mengesha</em><br>Kiros</h1>
+      <div class="hero-amharic">አቤል ኪሮስ</div>
+      <p class="hero-tagline">
+        IT professional, future security engineer,<br>
+        <strong>first-generation everything.</strong>
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-flag">
+      <div>አንበሳ · HEART OF A LION</div>
+      <div class="stripes"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Nav -->
-    <nav id="nav">
-        <ul>
-            <li><a href="#intro" class="active">About Me</a></li>
-            <li><a href="generic.html">Projects</a></li>
-            <li><a href="generic2.html">Resume</a></li>
-            <li><a href="#cta">Contact</a></li>
-        </ul>
-    </nav>
+<!-- ========== ABOUT ========== -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">01 — About</div>
+    <h2 class="section-title">A technician by night, a <em>student</em> by day, a builder always.</h2>
 
+    <div class="about-grid">
+      <aside class="about-meta">
+        <dl>
+          <dt>Currently</dt>
+          <dd>Customer Technology Support Technician I<br>URMC · Strong Memorial & Highland</dd>
+          <dt>Studying</dt>
+          <dd>B.S. Cybersecurity & Information Assurance<br>Western Governors University</dd>
+          <dt>Based in</dt>
+          <dd>Rochester, New York</dd>
+          <dt>Focus</dt>
+          <dd>SOC · Blue team · Systems engineering · Cloud security</dd>
+        </dl>
+      </aside>
 
-				<!-- Main -->
-					<div id="main">
+      <div class="about-body reveal">
+        <p>I'm a <strong>Customer Technology Support Technician</strong> at the University of Rochester Medical Center, working overnight on the Tier 2 support team across Strong Memorial and Highland Hospitals. Day to day, I troubleshoot hardware, software, and networking issues for clinical and executive staff — and help keep a 24/7 healthcare environment running.</p>
 
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Hi, I'm Abel!</h2>
-										</header>
-										<p>
-											<h3>About Me</h3>
+        <p>I'm also a full-time student at Western Governors University pursuing my <strong>B.S. in Cybersecurity & Information Assurance</strong>, while actively stacking industry certifications. My long-term goal is to move into a cybersecurity engineering or SOC role, with systems engineering and infrastructure as natural stepping stones along the way.</p>
 
-											<p>
-												I'm an IT professional with over 2 years of experience and I'm currently working at the University of Rochester 
-											Medical Center part of the overnight IT support team for ISD. Additionally, I have a background in computer science 
-											from RIT which equipped me with an array of skills including scripting and programming solving skills.
+        <p>Before URMC, I came up through TEKsystems as a PC installer for the Saunders Orthopedics Center launch, and before that I worked help desk support for Onity (Carrier Corporation), where I handled high-priority escalations on legacy encoder systems and RFID hardware.</p>
 
-											</p>
-											<h3>What Motivates Me</h3>
+        <p>I'm comfortable in the terminal, I'm not afraid of code, and I treat scripting as a tool — something to automate the boring stuff, speed up troubleshooting, and make day-to-day work better. Being able to actually read code and logs instead of just Googling the error message makes a real difference in IT and security work.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-											<p>I am a highly motivated person, constantly striving for self-improvement in all aspects of life—including my health, skills, 
-											and relationships. I take pride in my work and am passionate about learning and developing my expertise in this field.
-											While planning is important, I've found that in IT and programming, it's best to take action and "just do the thing." This 
-											approach not only builds confidence but also allows us to add value through experimentation and discovering effective solutions 
-											when working in teams. This mindset drives me to work on labs and personal projects outside of work to refine my craft and sharpen 
-											my skills. It's similar to how I approach training—trying to improve a little each day. I have a particularly strong interest in 
-											cybersecurity and cloud computing.
-										    </p>
+<!-- ========== MOTIVATION ========== -->
+<section class="motivation" id="motivation">
+  <div class="container">
+    <div class="section-label">02 — What drives me</div>
+    <h2 class="section-title">Just <em>do the thing.</em></h2>
 
-											<h3>My Passions and Values</h3>
-											<p>I take pride in my work ethic and discipline. Growing up, my family instilled in me the importance of education and strong values. 
-											Visiting Ethiopia broadened my perspective of the world and taught me about the sacrifices my family made to provide my siblings 
-											and me with opportunities for a better life. These experiences sparked my desire to rise above mediocrity. There's a saying in 
-											Amharic, "አንበሳ" (anbessa)," which translates to "heart of a lion." No matter what adversities we face in life, it's essential to 
-											stay focused and positive, do the necessary work, and let the results speak for themselves. I enjoy learning about different 
-											traditions, languages, and customs, which deepens my understanding of our diverse world.
-											My aspirations extend beyond personal growth—I am motivated to inspire and empower others. I aim to uplift my friends, family, 
-											and community by sharing knowledge, fostering ambition, and encouraging everyone to strive for greater heights.</p>
-										</p>
-									
-									</div>
-									<span class="image"><img src="images/a1.jpg" alt="" /></span>
-								</div>
-							</section>
+    <div class="motivation-inner reveal">
+      <p>I'm highly motivated and constantly striving for self-improvement — in my health, my skills, my relationships, and my craft. I take pride in my work and I'm obsessive about learning. Planning matters, but in IT and security I've learned that the most valuable thing is often to just take action and <strong>do the thing</strong>. That approach builds confidence, exposes what you actually don't know yet, and helps you contribute real value instead of waiting to feel ready.</p>
 
+      <p>That's why I work on labs and personal projects outside of work — to refine my craft and sharpen my skills. It's the same way I approach training: a little better each day, stacked consistently over time. I have a particularly strong interest in cybersecurity, cloud infrastructure, and the intersection where both meet enterprise systems.</p>
 
+      <p>One of the things I've been focused on recently is integrating <strong>AI and prompt engineering</strong> into my workflow — not as a replacement for thinking, but as a force multiplier. Knowing how to actually use these tools well, while understanding their limits, is becoming one of the most valuable skills in tech. I'd rather be ahead of that curve than behind it.</p>
+    </div>
+  </div>
+</section>
 
-						
+<!-- ========== HEART OF A LION ========== -->
+<section class="lion" id="lion">
+  <div class="container">
+    <div class="section-label">03 — The journey</div>
 
-						<!-- Get Started -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Lets Connect!</h2>
-								</header>
-								<footer class="major">
-									<ul class="icons">
-										<li><a href="https://www.linkedin.com/in/abelkiros/" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-										<li><a href="https://github.com/abelkiros" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-										<li><a href ="https://medium.com/@abel.m.kiros ">My Blog</a></li>
-										<li><a href="generic.html">Projects</a></li>
-										<li><a href="generic2.html">Resume</a></li>
-										
-									</ul>
-								</footer>
-							</section>
+    <div class="lion-header">
+      <h2>Heart of a Lion</h2>
+      <span class="amharic">አንበሳ</span>
+    </div>
 
-					</div>
+    <div class="lion-body reveal">
+      <p>I've lost 100 pounds. Twice. The second time was harder.</p>
 
-				<!-- Footer -->
-					<footer id="footer">
-		
-					</footer>
+      <p>The first journey started in 2013, when I traveled to Ethiopia and learned about my roots. Seeing where my family came from — and understanding what they sacrificed so my siblings and I could have the life we have — changed my perspective on the world. That trip wasn't just about food or exercise. It was about identity. <span class="amharic-inline">አንበሳ</span> (anbessa) — <em>heart of a lion</em> — became the word I came back with. It's the idea that no matter what life throws at you, you stay focused, you do the work, and you let the results speak for themselves.</p>
 
-			</div>
+      <p>The second journey started during COVID. I had gained all the weight back, and this time it was harder — because I already knew what being healthy felt like, and I had lost it. I started having panic attacks. I was afraid of developing real health conditions. Climbing back when you already know how high the top is — and you know exactly how much work it takes to get there — requires a different kind of discipline than doing it the first time.</p>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <p>What got me through the second climb was three things: <strong>willpower, faith, and the people around me.</strong> I couldn't have done it without my family and friends — they believed in the version of me I was trying to become before I did. Faith, trusting God, was the steady part underneath the effort, especially on the days the effort wasn't enough by itself.</p>
 
-			<!-- JavaScript to include the navigation -->
-		<script>
-    		// Fetch and include the navigation HTML file
-    		fetch('nav.html')
-        		.then(response => response.text())
-        		.then(html => {
-            		document.getElementById('nav-placeholder').innerHTML = html;
-        		})
-        		.catch(error => console.error('Error fetching navigation:', error));
-		</script>
+      <p>Today I'm stronger than I've ever been. I'm benching 225 for 8, doing weighted pull-ups and dips, and holding a standard of health I used to think wasn't for people like me. But the part that matters isn't the numbers — it's what I learned from being on both sides of that climb. I know what it costs to rebuild yourself. I know how much difference the right support makes. And that's why <strong>I feel I owe it to be in a position to help the people coming up behind me</strong> — whether that's family, friends, or the users I support every night at work. It's also part of why I'm building a career in cybersecurity. It's a field that exists to protect people, and after being on the receiving end of that kind of support, being on the giving end feels like the right use of my time.</p>
 
-	</body>
+      <p>Discipline under pressure is discipline under pressure. Whether it's a CrowdStrike outage at 3am or rebuilding yourself back to who you know you can be — the work is the work, and you do it one day at a time.</p>
+
+      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="lion-cta">Read the full story on Medium</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">04 — Experience</div>
+    <h2 class="section-title">Production systems. <em>Real</em> users.</h2>
+
+    <div class="exp-list">
+      <div class="exp-item reveal">
+        <div class="exp-date">APR 2024<br>— PRESENT</div>
+        <div>
+          <h3 class="exp-title">Customer Technology Support Technician I</h3>
+          <div class="exp-company">University of Rochester Medical Center · ISD CTS</div>
+          <ul class="exp-bullets">
+            <li>Tier 2 overnight support for internal users across URMC's infrastructure — hardware, software, and networking at Strong Memorial and Highland Hospitals.</li>
+            <li>Spearheaded device compliance and security through <strong>large-scale PC replacements and manual Windows 11 deployments</strong> across high-criticality clinical environments.</li>
+            <li>Managed end-to-end audiovisual and project support for <strong>Hospital Chief leadership meetings</strong> — zero-fail performance on high-stakes executive communications.</li>
+            <li>Served as <strong>initial on-site responder during the 2024 global CrowdStrike outage</strong>; identified the scope of the system failure and initiated emergency escalation protocols by alerting the on-call management team.</li>
+            <li>Maintained calm, effective performance under pressure in a fast-paced medical setting.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-date">AUG 2023<br>— MAR 2024</div>
+        <div>
+          <h3 class="exp-title">PC Installer · ISD CTS Offsite</h3>
+          <div class="exp-company">TEKsystems · Saunders Center for Orthopedics</div>
+          <ul class="exp-bullets">
+            <li>Spearheaded the physical deployment and imaging of all workstations for the new Orthopedics Center as part of a two-person team.</li>
+            <li>Configured and deployed iPads for off-site mobility team locations in support of the welcome mobile project.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-date">NOV 2022<br>— MAY 2023</div>
+        <div>
+          <h3 class="exp-title">Help Desk Specialist</h3>
+          <div class="exp-company">Onity · Carrier Corporation (Remote)</div>
+          <ul class="exp-bullets">
+            <li>Provided technical support for HT22, HT28, OnPoint, and OnPortal encoder systems and RFID keycard hardware.</li>
+            <li>Served as the <strong>final escalation point</strong> for high-priority technical issues — running 1–2 hour troubleshooting sessions on complex problems.</li>
+            <li>Mastered legacy DOS-based hardware through technical documentation, providing expert remote support for systems never physically accessed.</li>
+            <li>Documented all activities in Salesforce ticketing; handled customer inquiries, payments, and service requests.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CERTIFICATIONS ========== -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label">05 — Certifications</div>
+    <h2 class="section-title">Credentials, <em>stacked</em> and verifiable.</h2>
+
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">CompTIA A+</div>
+        <div class="cert-issuer">CompTIA</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">CompTIA Security+</div>
+        <div class="cert-issuer">CompTIA</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status in-progress">In Progress</div>
+        <div class="cert-name">CompTIA Network+</div>
+        <div class="cert-issuer">CompTIA · Studying now</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status planned">Planned</div>
+        <div class="cert-name">CompTIA SecurityX</div>
+        <div class="cert-issuer">CompTIA · After Network+</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">Google IT Support</div>
+        <div class="cert-issuer">Google · Professional Certificate</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">Google Cybersecurity</div>
+        <div class="cert-issuer">Google · Professional Certificate</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">Scientific Computing</div>
+        <div class="cert-issuer">Brookhaven National Laboratory · Summer Internship</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">06 — Featured Projects</div>
+    <h2 class="section-title">Labs, builds, and <em>real</em> blue team work.</h2>
+
+    <div class="project-list">
+      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+        <div class="project-number">/01</div>
+        <div class="project-main">
+          <h3 class="project-name">Azure SIEM & Honeypot Lab</h3>
+          <div class="project-tools">Azure · Sentinel · PowerShell · Log Analytics</div>
+          <p class="project-desc">Built a custom PowerShell script to extract metadata from Windows Event Viewer, forwarded it to a third-party API for geolocation enrichment, and ingested the custom logs into Log Analytics Workspace. Built a Microsoft Sentinel workbook to visualize global RDP brute-force attack data on a world map.</p>
+        </div>
+        <div class="project-link">Read on Medium</div>
+      </a>
+
+      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+        <div class="project-number">/02</div>
+        <div class="project-main">
+          <h3 class="project-name">Vulnerability Management Lab</h3>
+          <div class="project-tools">Nessus Essentials · VMware</div>
+          <p class="project-desc">Installed and configured Nessus Essentials to perform credentialed vulnerability scans against Windows 10 hosts. Implemented the full vulnerability management lifecycle on sandbox networks: Discover → Prioritize → Assess → Report → Remediate → Verify.</p>
+        </div>
+        <div class="project-link">Read on Medium</div>
+      </a>
+
+      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+        <div class="project-number">/03</div>
+        <div class="project-main">
+          <h3 class="project-name">Virtual Active Directory Lab</h3>
+          <div class="project-tools">Windows Server 2019 · VirtualBox · PowerShell</div>
+          <p class="project-desc">Configured a Domain Controller on a Windows Server 2019 VM, performed AD administration with PowerShell scripts to automate provisioning and deprovisioning of user accounts, and set up Remote Access Server (RAS) features for NAT/PAT alongside Windows DNS/DHCP services.</p>
+        </div>
+        <div class="project-link">Read on Medium</div>
+      </a>
+
+      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+        <div class="project-number">/04</div>
+        <div class="project-main">
+          <h3 class="project-name">Crypto Mining Rig</h3>
+          <div class="project-tools">Nicehash · MSI Afterburner · Custom Hardware</div>
+          <p class="project-desc">Designed and built a 4-GPU mining rig, achieving a 25% higher hash rate through optimized hardware selection and system configuration. Implemented custom cooling solutions that reduced thermal issues by 30%. Generated approximately $300/week in Bitcoin at peak.</p>
+        </div>
+        <div class="project-link">Read on Medium</div>
+      </a>
+
+      <a href="https://github.com/abelkiros/Caesar-Cipher" target="_blank" rel="noopener" class="project reveal">
+        <div class="project-number">/05</div>
+        <div class="project-main">
+          <h3 class="project-name">Caesar Cipher Encryption</h3>
+          <div class="project-tools">Python · VS Code</div>
+          <p class="project-desc">Python implementation of the Caesar cipher for text encryption and decryption. Applied fundamental cryptography principles to create a functional substitution cipher with brute-force decoding — my on-ramp into hands-on crypto.</p>
+        </div>
+        <div class="project-link">View on GitHub</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">07 — Toolbox</div>
+    <h2 class="section-title">What I work with.</h2>
+
+    <div class="skills-grid reveal">
+      <div>
+        <div class="skill-group-label">Languages & Scripting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">PowerShell</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-group-label">Cloud & Security</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Azure</span>
+          <span class="skill-tag">Sentinel</span>
+          <span class="skill-tag">Nessus</span>
+          <span class="skill-tag">SentinelOne</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-group-label">Systems & Infrastructure</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Active Directory</span>
+          <span class="skill-tag">Windows Server 2019</span>
+          <span class="skill-tag">VMware</span>
+          <span class="skill-tag">VirtualBox</span>
+          <span class="skill-tag">SCCM</span>
+          <span class="skill-tag">Microsoft 365</span>
+          <span class="skill-tag">Imprivata MAM</span>
+          <span class="skill-tag">GlobalProtect VPN</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-group-label">Ticketing & ITSM</div>
+        <div class="skill-tags">
+          <span class="skill-tag">ServiceNow</span>
+          <span class="skill-tag">Salesforce</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-group-label">Foundations</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Data Structures</span>
+          <span class="skill-tag">OOP</span>
+          <span class="skill-tag">Discrete Math</span>
+          <span class="skill-tag">Networking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EDUCATION ========== -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">08 — Education</div>
+    <h2 class="section-title">Always a student.</h2>
+
+    <div class="edu-list">
+      <div class="edu-item reveal">
+        <div>
+          <div class="edu-degree">B.S. Cybersecurity & Information Assurance</div>
+          <div class="edu-school">Western Governors University</div>
+          <div class="edu-detail">In progress · Full-time while working</div>
+        </div>
+        <div class="edu-date">2025 — PRESENT</div>
+      </div>
+
+      <div class="edu-item reveal">
+        <div>
+          <div class="edu-degree">Computer Science Coursework</div>
+          <div class="edu-school">Rochester Institute of Technology</div>
+          <div class="edu-detail">Data structures, OOP, discrete math, calculus, software development</div>
+        </div>
+        <div class="edu-date">2017 — 2019</div>
+      </div>
+
+      <div class="edu-item reveal">
+        <div>
+          <div class="edu-degree">A.S. Individualized Studies</div>
+          <div class="edu-school">Monroe Community College</div>
+          <div class="edu-detail">Associate of Science degree, completed</div>
+        </div>
+        <div class="edu-date">2014 — 2016</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label" style="justify-content: center;">09 — Let's Connect</div>
+    <h2 class="contact-title">Ready <em>when you are.</em></h2>
+    <p class="contact-text">
+      Always open to connecting with people in IT, systems, and cybersecurity. If you're hiring for a security, sysadmin, or systems engineering role and want someone with real production healthcare IT experience, the CompTIA stack, and a work ethic to match — let's talk.
+    </p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/abelkiros/" target="_blank" rel="noopener" class="contact-link">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/abelkiros" target="_blank" rel="noopener" class="contact-link">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub
+      </a>
+      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="contact-link">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        Medium
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div>© <span id="year">2026</span> Abel Mengesha Kiros · Built with love in Rochester, NY</div>
+    <div class="footer-flag">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ========== THEME TOGGLE ==========
+// Initial theme is set in <head> to avoid flash. This handles click-to-toggle.
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  if (current === 'light') {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('abel-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('abel-theme', 'light');
+  }
+});
+
+// ========== NAV SCROLL STATE ==========
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+// ========== YEAR ==========
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ========== REVEAL ON SCROLL ==========
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
 </html>
