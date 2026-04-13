@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Abel Mengesha Kiros — IT professional and aspiring cybersecurity engineer based in Rochester, NY. Customer Technology Support Technician at URMC, B.S. Cybersecurity student at WGU." />
-<title>Abel Mengesha Kiros — Heart of a Lion</title>
-
+<meta name="description" content="Abel Mengesha Kiros. IT professional and aspiring cybersecurity engineer based in Rochester, NY. Customer Technology Support Technician at URMC, B.S. Cybersecurity student at WGU." />
+<title>Abel Mengesha Kiros · Heart of a Lion</title>
+ 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+ 
 <script>
 // Applied before CSS paints to prevent flash of wrong theme
 (function() {
@@ -22,7 +22,7 @@
   } catch(e) {}
 })();
 </script>
-
+ 
 <style>
 /* ===================================================================
    VARIABLES — DARK MODE (default)
@@ -36,26 +36,26 @@
   --text: #f5f5f0;
   --text-dim: #9a9a95;
   --text-faint: #5f5f5a;
-
+ 
   --green: #078930;     /* Ethiopian green */
   --yellow: #FCDD09;    /* Ethiopian yellow */
   --red: #DA121A;       /* Ethiopian red */
   --accent-emphasis: var(--yellow);  /* color used for <em> highlights */
-
+ 
   --green-soft: rgba(7, 137, 48, 0.15);
   --yellow-soft: rgba(252, 221, 9, 0.12);
   --red-soft: rgba(218, 18, 26, 0.12);
-
+ 
   --grain-opacity: 0.035;
-
+ 
   --font-display: 'Instrument Serif', Georgia, serif;
   --font-body: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-
+ 
   --container: 1200px;
   --section-gap: clamp(5rem, 10vw, 9rem);
 }
-
+ 
 /* ===================================================================
    VARIABLES — LIGHT MODE
    =================================================================== */
@@ -68,24 +68,24 @@
   --text: #111111;
   --text-dim: #555550;
   --text-faint: #8a8880;
-
+ 
   --green: #055f21;     /* deeper green for contrast on white */
   --yellow: #b8860b;    /* darker yellow (goldenrod) — readable on white */
   --red: #b8121a;       /* slightly deeper red */
   --accent-emphasis: var(--red);  /* red reads better on white than yellow */
-
+ 
   --green-soft: rgba(5, 95, 33, 0.08);
   --yellow-soft: rgba(184, 134, 11, 0.08);
   --red-soft: rgba(184, 18, 26, 0.06);
-
+ 
   --grain-opacity: 0.025;
 }
-
+ 
 /* Smooth theme transition */
 html, body, nav, .cert-card, .edu-item, .skill-tag, .contact-link, .btn {
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
-
+ 
 /* ===================================================================
    RESET
    =================================================================== */
@@ -102,7 +102,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ 
 /* Subtle grain overlay */
 body::before {
   content: '';
@@ -113,10 +113,10 @@ body::before {
   opacity: var(--grain-opacity);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-
+ 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
-
+ 
 /* ===================================================================
    LAYOUT
    =================================================================== */
@@ -127,12 +127,12 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 2;
 }
-
+ 
 section {
   padding: var(--section-gap) 0;
   position: relative;
 }
-
+ 
 /* ===================================================================
    NAV
    =================================================================== */
@@ -193,7 +193,7 @@ nav .container {
 @media (max-width: 720px) {
   .nav-links { display: none; }
 }
-
+ 
 /* ===================================================================
    HERO
    =================================================================== */
@@ -312,7 +312,7 @@ nav .container {
   transform: translateY(-2px);
 }
 .btn::after { content: '→'; font-size: 1rem; }
-
+ 
 .hero-flag {
   position: absolute;
   bottom: 3rem;
@@ -342,7 +342,7 @@ nav .container {
 @media (max-width: 720px) {
   .hero-flag { display: none; }
 }
-
+ 
 /* ===================================================================
    SECTION HEADERS
    =================================================================== */
@@ -373,7 +373,7 @@ nav .container {
   max-width: 900px;
 }
 .section-title em { font-style: italic; color: var(--accent-emphasis); }
-
+ 
 /* ===================================================================
    ABOUT
    =================================================================== */
@@ -409,7 +409,7 @@ nav .container {
   margin-bottom: 1.4rem;
 }
 .about-body p strong { color: var(--text); font-weight: 500; }
-
+ 
 /* ===================================================================
    MOTIVATION
    =================================================================== */
@@ -426,7 +426,7 @@ nav .container {
   margin-bottom: 1.6rem;
 }
 .motivation-inner p strong { color: var(--text); font-weight: 500; }
-
+ 
 /* ===================================================================
    HEART OF A LION
    =================================================================== */
@@ -506,7 +506,7 @@ nav .container {
   transform: translateY(-2px);
 }
 .lion-cta::after { content: '→'; }
-
+ 
 /* ===================================================================
    EXPERIENCE
    =================================================================== */
@@ -564,7 +564,7 @@ nav .container {
   background: var(--text-faint);
 }
 .exp-bullets li strong { color: var(--text); font-weight: 500; }
-
+ 
 /* ===================================================================
    CERTIFICATIONS
    =================================================================== */
@@ -617,7 +617,7 @@ nav .container {
   font-size: 0.78rem;
   color: var(--text-dim);
 }
-
+ 
 /* ===================================================================
    PROJECTS
    =================================================================== */
@@ -686,7 +686,7 @@ nav .container {
 }
 .project:hover .project-link { color: var(--green); }
 .project-link::after { content: ' →'; }
-
+ 
 /* ===================================================================
    SKILLS
    =================================================================== */
@@ -721,7 +721,7 @@ nav .container {
   border-color: var(--green);
   color: var(--green);
 }
-
+ 
 /* ===================================================================
    EDUCATION
    =================================================================== */
@@ -759,7 +759,7 @@ nav .container {
   color: var(--text-faint);
   white-space: nowrap;
 }
-
+ 
 /* ===================================================================
    CONTACT
    =================================================================== */
@@ -821,7 +821,7 @@ nav .container {
   transform: translateY(-2px);
 }
 .contact-link svg { width: 16px; height: 16px; }
-
+ 
 /* ===================================================================
    FOOTER
    =================================================================== */
@@ -844,7 +844,7 @@ footer .container {
 .footer-flag span:nth-child(1) { background: var(--green); }
 .footer-flag span:nth-child(2) { background: var(--yellow); }
 .footer-flag span:nth-child(3) { background: var(--red); }
-
+ 
 /* ===================================================================
    THEME TOGGLE
    =================================================================== */
@@ -885,11 +885,11 @@ footer .container {
 .theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.6); }
 :root[data-theme="light"] .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg) scale(0.6); }
 :root[data-theme="light"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
-
+ 
 @media (max-width: 720px) {
   .theme-toggle { margin-left: auto; }
 }
-
+ 
 /* ===================================================================
    ANIMATIONS
    =================================================================== */
@@ -901,7 +901,7 @@ footer .container {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
+ 
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -911,7 +911,7 @@ footer .container {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 /* ===================================================================
    SELECTION
    =================================================================== */
@@ -922,7 +922,7 @@ footer .container {
 </style>
 </head>
 <body>
-
+ 
 <!-- ========== NAV ========== -->
 <nav id="nav">
   <div class="container">
@@ -947,7 +947,7 @@ footer .container {
     </div>
   </div>
 </nav>
-
+ 
 <!-- ========== HERO ========== -->
 <section class="hero">
   <div class="container">
@@ -957,7 +957,7 @@ footer .container {
       <div class="hero-amharic">አቤል ኪሮስ</div>
       <p class="hero-tagline">
         IT professional, future security engineer,<br>
-        <strong>first-generation everything.</strong>
+        <strong>first generation everything.</strong>
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -970,126 +970,126 @@ footer .container {
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== ABOUT ========== -->
 <section id="about">
   <div class="container">
-    <div class="section-label">01 — About</div>
-    <h2 class="section-title">A technician by night, a <em>student</em> by day, a builder always.</h2>
-
+    <div class="section-label">01 · About</div>
+    <h2 class="section-title">A technician by night, a <em>student</em> by day.</h2>
+ 
     <div class="about-grid">
       <aside class="about-meta">
         <dl>
           <dt>Currently</dt>
-          <dd>Customer Technology Support Technician I<br>URMC · Strong Memorial & Highland</dd>
+          <dd>Customer Technology Support Technician I<br>URMC, Strong Memorial and Highland</dd>
           <dt>Studying</dt>
-          <dd>B.S. Cybersecurity & Information Assurance<br>Western Governors University</dd>
+          <dd>B.S. Cybersecurity and Information Assurance<br>Western Governors University</dd>
           <dt>Based in</dt>
           <dd>Rochester, New York</dd>
           <dt>Focus</dt>
-          <dd>SOC · Blue team · Systems engineering · Cloud security</dd>
+          <dd>Cybersecurity engineering, blue team, systems engineering, cloud security</dd>
         </dl>
       </aside>
-
+ 
       <div class="about-body reveal">
-        <p>I'm a <strong>Customer Technology Support Technician</strong> at the University of Rochester Medical Center, working overnight on the Tier 2 support team across Strong Memorial and Highland Hospitals. Day to day, I troubleshoot hardware, software, and networking issues for clinical and executive staff — and help keep a 24/7 healthcare environment running.</p>
-
-        <p>I'm also a full-time student at Western Governors University pursuing my <strong>B.S. in Cybersecurity & Information Assurance</strong>, while actively stacking industry certifications. My long-term goal is to move into a cybersecurity engineering or SOC role, with systems engineering and infrastructure as natural stepping stones along the way.</p>
-
-        <p>Before URMC, I came up through TEKsystems as a PC installer for the Saunders Orthopedics Center launch, and before that I worked help desk support for Onity (Carrier Corporation), where I handled high-priority escalations on legacy encoder systems and RFID hardware.</p>
-
-        <p>I'm comfortable in the terminal, I'm not afraid of code, and I treat scripting as a tool — something to automate the boring stuff, speed up troubleshooting, and make day-to-day work better. Being able to actually read code and logs instead of just Googling the error message makes a real difference in IT and security work.</p>
+        <p>I'm a <strong>Customer Technology Support Technician</strong> at the University of Rochester Medical Center, working overnight on the Tier 2 support team across Strong Memorial and Highland Hospitals. Day to day, I troubleshoot hardware, software, and networking issues for clinical and executive staff, and help keep a 24/7 healthcare environment running.</p>
+ 
+        <p>I'm also a full-time student at Western Governors University working on my <strong>B.S. in Cybersecurity and Information Assurance</strong> while stacking industry certifications. My long-term goal is to move into a cybersecurity engineer role. I'm also drawn to systems administration, because I want to really understand how systems run from the inside. The better I understand how something works, the better I can defend it.</p>
+ 
+        <p>Before URMC, I came up through TEKsystems as a PC installer for the Saunders Orthopedics Center launch. Before that, I worked help desk for Onity (Carrier Corporation), where I handled high-priority escalations on legacy encoder systems and RFID hardware. Every one of those jobs taught me something different about how real production systems actually break.</p>
+ 
+        <p>I'm comfortable in the terminal and I'm not afraid of code. I treat scripting as a tool for automating the boring stuff, speeding up troubleshooting, and making day-to-day work better. Being able to actually read code and logs instead of just Googling the error message makes a real difference in IT and security work.</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== MOTIVATION ========== -->
 <section class="motivation" id="motivation">
   <div class="container">
-    <div class="section-label">02 — What drives me</div>
+    <div class="section-label">02 · What drives me</div>
     <h2 class="section-title">Just <em>do the thing.</em></h2>
-
+ 
     <div class="motivation-inner reveal">
-      <p>I'm highly motivated and constantly striving for self-improvement — in my health, my skills, my relationships, and my craft. I take pride in my work and I'm obsessive about learning. Planning matters, but in IT and security I've learned that the most valuable thing is often to just take action and <strong>do the thing</strong>. That approach builds confidence, exposes what you actually don't know yet, and helps you contribute real value instead of waiting to feel ready.</p>
-
-      <p>That's why I work on labs and personal projects outside of work — to refine my craft and sharpen my skills. It's the same way I approach training: a little better each day, stacked consistently over time. I have a particularly strong interest in cybersecurity, cloud infrastructure, and the intersection where both meet enterprise systems.</p>
-
-      <p>One of the things I've been focused on recently is integrating <strong>AI and prompt engineering</strong> into my workflow — not as a replacement for thinking, but as a force multiplier. Knowing how to actually use these tools well, while understanding their limits, is becoming one of the most valuable skills in tech. I'd rather be ahead of that curve than behind it.</p>
+      <p>I'm highly motivated and constantly striving for self-improvement in my health, my skills, my relationships, and my craft. I take pride in my work and I'm obsessive about learning. I believe we should be learning every single day. It's a privilege, and to me the moment we stop learning is the moment we kind of stop living. Planning matters, but in IT and security I've learned that the most valuable thing is often to just take action and <strong>do the thing</strong>. That approach builds confidence, exposes what you actually don't know yet, and helps you contribute real value instead of waiting to feel ready.</p>
+ 
+      <p>That's why I work on labs and personal projects outside of work. It's how I refine my craft and sharpen my skills. I approach it the same way I approach training: a little better each day, stacked consistently over time. I have a strong interest in cybersecurity, cloud infrastructure, and the intersection where both meet enterprise systems.</p>
+ 
+      <p>One thing I've been focused on lately is integrating <strong>AI and prompt engineering</strong> into my workflow. Not as a replacement for thinking, but as a force multiplier. Knowing how to actually use these tools well, while understanding where they fall short, is becoming one of the most valuable skills in tech. I'd rather be ahead of that curve than behind it.</p>
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== HEART OF A LION ========== -->
 <section class="lion" id="lion">
   <div class="container">
-    <div class="section-label">03 — The journey</div>
-
+    <div class="section-label">03 · The journey</div>
+ 
     <div class="lion-header">
       <h2>Heart of a Lion</h2>
       <span class="amharic">አንበሳ</span>
     </div>
-
+ 
     <div class="lion-body reveal">
       <p>I've lost 100 pounds. Twice. The second time was harder.</p>
-
-      <p>The first journey started in 2013, when I traveled to Ethiopia and learned about my roots. Seeing where my family came from — and understanding what they sacrificed so my siblings and I could have the life we have — changed my perspective on the world. That trip wasn't just about food or exercise. It was about identity. <span class="amharic-inline">አንበሳ</span> (anbessa) — <em>heart of a lion</em> — became the word I came back with. It's the idea that no matter what life throws at you, you stay focused, you do the work, and you let the results speak for themselves.</p>
-
-      <p>The second journey started during COVID. I had gained all the weight back, and this time it was harder — because I already knew what being healthy felt like, and I had lost it. I started having panic attacks. I was afraid of developing real health conditions. Climbing back when you already know how high the top is — and you know exactly how much work it takes to get there — requires a different kind of discipline than doing it the first time.</p>
-
-      <p>What got me through the second climb was three things: <strong>willpower, faith, and the people around me.</strong> I couldn't have done it without my family and friends — they believed in the version of me I was trying to become before I did. Faith, trusting God, was the steady part underneath the effort, especially on the days the effort wasn't enough by itself.</p>
-
-      <p>Today I'm stronger than I've ever been. I'm benching 225 for 8, doing weighted pull-ups and dips, and holding a standard of health I used to think wasn't for people like me. But the part that matters isn't the numbers — it's what I learned from being on both sides of that climb. I know what it costs to rebuild yourself. I know how much difference the right support makes. And that's why <strong>I feel I owe it to be in a position to help the people coming up behind me</strong> — whether that's family, friends, or the users I support every night at work. It's also part of why I'm building a career in cybersecurity. It's a field that exists to protect people, and after being on the receiving end of that kind of support, being on the giving end feels like the right use of my time.</p>
-
-      <p>Discipline under pressure is discipline under pressure. Whether it's a CrowdStrike outage at 3am or rebuilding yourself back to who you know you can be — the work is the work, and you do it one day at a time.</p>
-
-      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="lion-cta">Read the full story on Medium</a>
+ 
+      <p>The first journey started in 2013, when I traveled to Ethiopia and learned about my roots. Seeing where my family came from, and understanding what they sacrificed so my siblings and I could have the life we have, changed my perspective on the world. That trip wasn't just about food or exercise. It was about identity. <span class="amharic-inline">አንበሳ</span> (anbessa), meaning <em>heart of a lion</em>, became the word I came back with. It's the idea that no matter what life throws at you, you stay focused, you do the work, and you let the results speak for themselves.</p>
+ 
+      <p>The second journey started during COVID. I had gained all the weight back, and this time it was harder, because I already knew what being healthy felt like, and I had lost it. I started having panic attacks. I was afraid of developing real health conditions. Climbing back when you already know how high the top is, and you know exactly how much work it takes to get there, requires a different kind of discipline than doing it the first time.</p>
+ 
+      <p>What got me through the second climb was three things: <strong>willpower, faith, and the people around me.</strong> I couldn't have done it without my family and friends. They believed in the version of me I was trying to become before I did. Faith, trusting God, was the steady part underneath the effort, especially on the days the effort wasn't enough by itself.</p>
+ 
+      <p>Today I'm stronger than I've ever been. I'm benching 225 for 8, doing weighted pull-ups and dips, and holding a standard of health I used to think wasn't for people like me. But the part that matters isn't the numbers. It's what I learned from being on both sides of that climb. I know what it costs to rebuild yourself. I know how much difference the right support makes. And that's why <strong>I feel I owe it to be in a position to help the people coming up behind me</strong>, whether that's family, friends, or the users I support every night at work. It's also part of why I'm building a career in cybersecurity. It's a field that exists to protect people, and after being on the receiving end of that kind of support, being on the giving end feels like the right use of my time.</p>
+ 
+      <p>Discipline under pressure is discipline under pressure. Whether it's a CrowdStrike outage at 3am or rebuilding yourself back to who you know you can be, the work is the work, and you do it one day at a time.</p>
+ 
+      <a href="https://medium.com/@abelkiros" target="_blank" rel="noopener" class="lion-cta">Read the full story on Medium</a>
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== EXPERIENCE ========== -->
 <section id="experience">
   <div class="container">
-    <div class="section-label">04 — Experience</div>
-    <h2 class="section-title">Production systems. <em>Real</em> users.</h2>
-
+    <div class="section-label">04 · Experience</div>
+    <h2 class="section-title">Where I've <em>put in</em> the work.</h2>
+ 
     <div class="exp-list">
       <div class="exp-item reveal">
-        <div class="exp-date">APR 2024<br>— PRESENT</div>
+        <div class="exp-date">APR 2024<br>TO PRESENT</div>
         <div>
           <h3 class="exp-title">Customer Technology Support Technician I</h3>
-          <div class="exp-company">University of Rochester Medical Center · ISD CTS</div>
+          <div class="exp-company">University of Rochester Medical Center, ISD CTS</div>
           <ul class="exp-bullets">
-            <li>Tier 2 overnight support for internal users across URMC's infrastructure — hardware, software, and networking at Strong Memorial and Highland Hospitals.</li>
+            <li>Tier 2 overnight support for internal users across URMC's infrastructure, covering hardware, software, and networking at Strong Memorial and Highland Hospitals.</li>
             <li>Spearheaded device compliance and security through <strong>large-scale PC replacements and manual Windows 11 deployments</strong> across high-criticality clinical environments.</li>
-            <li>Managed end-to-end audiovisual and project support for <strong>Hospital Chief leadership meetings</strong> — zero-fail performance on high-stakes executive communications.</li>
+            <li>Managed end-to-end audiovisual and project support for <strong>Hospital Chief leadership meetings</strong>, delivering zero-fail performance on high-stakes executive communications.</li>
             <li>Served as <strong>initial on-site responder during the 2024 global CrowdStrike outage</strong>; identified the scope of the system failure and initiated emergency escalation protocols by alerting the on-call management team.</li>
             <li>Maintained calm, effective performance under pressure in a fast-paced medical setting.</li>
           </ul>
         </div>
       </div>
-
+ 
       <div class="exp-item reveal">
-        <div class="exp-date">AUG 2023<br>— MAR 2024</div>
+        <div class="exp-date">AUG 2023<br>TO MAR 2024</div>
         <div>
-          <h3 class="exp-title">PC Installer · ISD CTS Offsite</h3>
-          <div class="exp-company">TEKsystems · Saunders Center for Orthopedics</div>
+          <h3 class="exp-title">PC Installer, ISD CTS Offsite</h3>
+          <div class="exp-company">TEKsystems, Saunders Center for Orthopedics</div>
           <ul class="exp-bullets">
             <li>Spearheaded the physical deployment and imaging of all workstations for the new Orthopedics Center as part of a two-person team.</li>
             <li>Configured and deployed iPads for off-site mobility team locations in support of the welcome mobile project.</li>
           </ul>
         </div>
       </div>
-
+ 
       <div class="exp-item reveal">
-        <div class="exp-date">NOV 2022<br>— MAY 2023</div>
+        <div class="exp-date">NOV 2022<br>TO MAY 2023</div>
         <div>
           <h3 class="exp-title">Help Desk Specialist</h3>
-          <div class="exp-company">Onity · Carrier Corporation (Remote)</div>
+          <div class="exp-company">Onity, Carrier Corporation (Remote)</div>
           <ul class="exp-bullets">
             <li>Provided technical support for HT22, HT28, OnPoint, and OnPortal encoder systems and RFID keycard hardware.</li>
-            <li>Served as the <strong>final escalation point</strong> for high-priority technical issues — running 1–2 hour troubleshooting sessions on complex problems.</li>
+            <li>Served as the <strong>final escalation point</strong> for high-priority technical issues, running 1 to 2 hour troubleshooting sessions on complex problems.</li>
             <li>Mastered legacy DOS-based hardware through technical documentation, providing expert remote support for systems never physically accessed.</li>
             <li>Documented all activities in Salesforce ticketing; handled customer inquiries, payments, and service requests.</li>
           </ul>
@@ -1098,13 +1098,13 @@ footer .container {
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== CERTIFICATIONS ========== -->
 <section id="certifications">
   <div class="container">
-    <div class="section-label">05 — Certifications</div>
-    <h2 class="section-title">Credentials, <em>stacked</em> and verifiable.</h2>
-
+    <div class="section-label">05 · Certifications</div>
+    <h2 class="section-title">Certifications <em>earned and in progress.</em></h2>
+ 
     <div class="cert-grid">
       <div class="cert-card reveal">
         <div class="cert-status">Earned</div>
@@ -1117,100 +1117,125 @@ footer .container {
         <div class="cert-issuer">CompTIA</div>
       </div>
       <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">Google IT Support</div>
+        <div class="cert-issuer">Google Professional Certificate</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">Google Cybersecurity</div>
+        <div class="cert-issuer">Google Professional Certificate</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status">Earned</div>
+        <div class="cert-name">Scientific Computing</div>
+        <div class="cert-issuer">Brookhaven National Laboratory</div>
+      </div>
+      <div class="cert-card reveal">
         <div class="cert-status in-progress">In Progress</div>
         <div class="cert-name">CompTIA Network+</div>
         <div class="cert-issuer">CompTIA · Studying now</div>
       </div>
       <div class="cert-card reveal">
         <div class="cert-status planned">Planned</div>
-        <div class="cert-name">CompTIA SecurityX</div>
-        <div class="cert-issuer">CompTIA · After Network+</div>
+        <div class="cert-name">CompTIA Project+</div>
+        <div class="cert-issuer">CompTIA</div>
       </div>
       <div class="cert-card reveal">
-        <div class="cert-status">Earned</div>
-        <div class="cert-name">Google IT Support</div>
-        <div class="cert-issuer">Google · Professional Certificate</div>
+        <div class="cert-status planned">Planned</div>
+        <div class="cert-name">CompTIA Data+</div>
+        <div class="cert-issuer">CompTIA</div>
       </div>
       <div class="cert-card reveal">
-        <div class="cert-status">Earned</div>
-        <div class="cert-name">Google Cybersecurity</div>
-        <div class="cert-issuer">Google · Professional Certificate</div>
+        <div class="cert-status planned">Planned</div>
+        <div class="cert-name">CompTIA CySA+</div>
+        <div class="cert-issuer">CompTIA</div>
       </div>
       <div class="cert-card reveal">
-        <div class="cert-status">Earned</div>
-        <div class="cert-name">Scientific Computing</div>
-        <div class="cert-issuer">Brookhaven National Laboratory · Summer Internship</div>
+        <div class="cert-status planned">Planned</div>
+        <div class="cert-name">CompTIA PenTest+</div>
+        <div class="cert-issuer">CompTIA</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status planned">Planned</div>
+        <div class="cert-name">ITIL 4 Foundation</div>
+        <div class="cert-issuer">AXELOS</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-status planned">Planned</div>
+        <div class="cert-name">LPI Linux Essentials</div>
+        <div class="cert-issuer">Linux Professional Institute</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== PROJECTS ========== -->
 <section id="projects">
   <div class="container">
-    <div class="section-label">06 — Featured Projects</div>
-    <h2 class="section-title">Labs, builds, and <em>real</em> blue team work.</h2>
-
+    <div class="section-label">06 · Featured Projects</div>
+    <h2 class="section-title">Hands-on <em>labs</em> and projects.</h2>
+ 
     <div class="project-list">
-      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+      <a href="https://medium.com/@abelkiros/sentinel-siem-honeypot-lab-w-microsoft-azure-62ddbf96a06e" target="_blank" rel="noopener" class="project reveal">
         <div class="project-number">/01</div>
         <div class="project-main">
           <h3 class="project-name">Azure SIEM & Honeypot Lab</h3>
-          <div class="project-tools">Azure · Sentinel · PowerShell · Log Analytics</div>
+          <div class="project-tools">Azure, Sentinel, PowerShell, Log Analytics</div>
           <p class="project-desc">Built a custom PowerShell script to extract metadata from Windows Event Viewer, forwarded it to a third-party API for geolocation enrichment, and ingested the custom logs into Log Analytics Workspace. Built a Microsoft Sentinel workbook to visualize global RDP brute-force attack data on a world map.</p>
         </div>
         <div class="project-link">Read on Medium</div>
       </a>
-
-      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+ 
+      <a href="https://medium.com/@abelkiros/vulnerability-management-home-lab-using-nessus-791e3a5e8c82" target="_blank" rel="noopener" class="project reveal">
         <div class="project-number">/02</div>
         <div class="project-main">
           <h3 class="project-name">Vulnerability Management Lab</h3>
-          <div class="project-tools">Nessus Essentials · VMware</div>
-          <p class="project-desc">Installed and configured Nessus Essentials to perform credentialed vulnerability scans against Windows 10 hosts. Implemented the full vulnerability management lifecycle on sandbox networks: Discover → Prioritize → Assess → Report → Remediate → Verify.</p>
+          <div class="project-tools">Nessus Essentials, VMware</div>
+          <p class="project-desc">Installed and configured Nessus Essentials to perform credentialed vulnerability scans against Windows 10 hosts. Implemented the full vulnerability management lifecycle on sandbox networks: Discover, Prioritize, Assess, Report, Remediate, Verify.</p>
         </div>
         <div class="project-link">Read on Medium</div>
       </a>
-
-      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+ 
+      <a href="https://medium.com/@abelkiros/how-to-set-up-active-directory-using-oracle-virtualbox-and-automate-adding-users-with-powershell-104efac1c9f6" target="_blank" rel="noopener" class="project reveal">
         <div class="project-number">/03</div>
         <div class="project-main">
           <h3 class="project-name">Virtual Active Directory Lab</h3>
-          <div class="project-tools">Windows Server 2019 · VirtualBox · PowerShell</div>
+          <div class="project-tools">Windows Server 2019, VirtualBox, PowerShell</div>
           <p class="project-desc">Configured a Domain Controller on a Windows Server 2019 VM, performed AD administration with PowerShell scripts to automate provisioning and deprovisioning of user accounts, and set up Remote Access Server (RAS) features for NAT/PAT alongside Windows DNS/DHCP services.</p>
         </div>
         <div class="project-link">Read on Medium</div>
       </a>
-
-      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="project reveal">
+ 
+      <a href="https://medium.com/@abelkiros/home-lab-running-crypto-mining-rig-8baee9abc54e" target="_blank" rel="noopener" class="project reveal">
         <div class="project-number">/04</div>
         <div class="project-main">
           <h3 class="project-name">Crypto Mining Rig</h3>
-          <div class="project-tools">Nicehash · MSI Afterburner · Custom Hardware</div>
-          <p class="project-desc">Designed and built a 4-GPU mining rig, achieving a 25% higher hash rate through optimized hardware selection and system configuration. Implemented custom cooling solutions that reduced thermal issues by 30%. Generated approximately $300/week in Bitcoin at peak.</p>
+          <div class="project-tools">Nicehash, MSI Afterburner, custom hardware</div>
+          <p class="project-desc">Designed and built a 4-GPU mining rig, achieving a 25% higher hash rate through optimized hardware selection and system configuration. Implemented custom cooling solutions that reduced thermal issues by 30%. Generated approximately $300/week in Bitcoin at peak. Full writeup: "How to Turn Your Electric Bill into a Mortgage Payment."</p>
         </div>
         <div class="project-link">Read on Medium</div>
       </a>
-
+ 
       <a href="https://github.com/abelkiros/Caesar-Cipher" target="_blank" rel="noopener" class="project reveal">
         <div class="project-number">/05</div>
         <div class="project-main">
           <h3 class="project-name">Caesar Cipher Encryption</h3>
-          <div class="project-tools">Python · VS Code</div>
-          <p class="project-desc">Python implementation of the Caesar cipher for text encryption and decryption. Applied fundamental cryptography principles to create a functional substitution cipher with brute-force decoding — my on-ramp into hands-on crypto.</p>
+          <div class="project-tools">Python, VS Code</div>
+          <p class="project-desc">Python implementation of the Caesar cipher for text encryption and decryption. Applied fundamental cryptography principles to create a functional substitution cipher with brute-force decoding. My on-ramp into hands-on crypto.</p>
         </div>
         <div class="project-link">View on GitHub</div>
       </a>
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== SKILLS ========== -->
 <section id="skills">
   <div class="container">
-    <div class="section-label">07 — Toolbox</div>
+    <div class="section-label">07 · Toolbox</div>
     <h2 class="section-title">What I work with.</h2>
-
+ 
     <div class="skills-grid reveal">
       <div>
         <div class="skill-group-label">Languages & Scripting</div>
@@ -1220,7 +1245,7 @@ footer .container {
           <span class="skill-tag">PowerShell</span>
         </div>
       </div>
-
+ 
       <div>
         <div class="skill-group-label">Cloud & Security</div>
         <div class="skill-tags">
@@ -1230,7 +1255,7 @@ footer .container {
           <span class="skill-tag">SentinelOne</span>
         </div>
       </div>
-
+ 
       <div>
         <div class="skill-group-label">Systems & Infrastructure</div>
         <div class="skill-tags">
@@ -1244,7 +1269,7 @@ footer .container {
           <span class="skill-tag">GlobalProtect VPN</span>
         </div>
       </div>
-
+ 
       <div>
         <div class="skill-group-label">Ticketing & ITSM</div>
         <div class="skill-tags">
@@ -1252,7 +1277,7 @@ footer .container {
           <span class="skill-tag">Salesforce</span>
         </div>
       </div>
-
+ 
       <div>
         <div class="skill-group-label">Foundations</div>
         <div class="skill-tags">
@@ -1265,13 +1290,13 @@ footer .container {
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== EDUCATION ========== -->
 <section id="education">
   <div class="container">
-    <div class="section-label">08 — Education</div>
+    <div class="section-label">08 · Education</div>
     <h2 class="section-title">Always a student.</h2>
-
+ 
     <div class="edu-list">
       <div class="edu-item reveal">
         <div>
@@ -1279,37 +1304,37 @@ footer .container {
           <div class="edu-school">Western Governors University</div>
           <div class="edu-detail">In progress · Full-time while working</div>
         </div>
-        <div class="edu-date">2025 — PRESENT</div>
+        <div class="edu-date">2025 TO PRESENT</div>
       </div>
-
+ 
       <div class="edu-item reveal">
         <div>
           <div class="edu-degree">Computer Science Coursework</div>
           <div class="edu-school">Rochester Institute of Technology</div>
           <div class="edu-detail">Data structures, OOP, discrete math, calculus, software development</div>
         </div>
-        <div class="edu-date">2017 — 2019</div>
+        <div class="edu-date">2017 TO 2019</div>
       </div>
-
+ 
       <div class="edu-item reveal">
         <div>
           <div class="edu-degree">A.S. Individualized Studies</div>
           <div class="edu-school">Monroe Community College</div>
           <div class="edu-detail">Associate of Science degree, completed</div>
         </div>
-        <div class="edu-date">2014 — 2016</div>
+        <div class="edu-date">2014 TO 2016</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== CONTACT ========== -->
 <section class="contact" id="contact">
   <div class="container">
-    <div class="section-label" style="justify-content: center;">09 — Let's Connect</div>
-    <h2 class="contact-title">Ready <em>when you are.</em></h2>
+    <div class="section-label" style="justify-content: center;">09 · Let's Connect</div>
+    <h2 class="contact-title">Let's <em>work together.</em></h2>
     <p class="contact-text">
-      Always open to connecting with people in IT, systems, and cybersecurity. If you're hiring for a security, sysadmin, or systems engineering role and want someone with real production healthcare IT experience, the CompTIA stack, and a work ethic to match — let's talk.
+      Always open to connecting with people in IT, systems, and cybersecurity. If you're hiring for a security, sysadmin, or systems engineering role and want someone with real production healthcare IT experience, the CompTIA stack, and a work ethic to match, let's talk.
     </p>
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/abelkiros/" target="_blank" rel="noopener" class="contact-link">
@@ -1320,14 +1345,14 @@ footer .container {
         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         GitHub
       </a>
-      <a href="https://medium.com/@abel.m.kiros" target="_blank" rel="noopener" class="contact-link">
+      <a href="https://medium.com/@abelkiros" target="_blank" rel="noopener" class="contact-link">
         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
         Medium
       </a>
     </div>
   </div>
 </section>
-
+ 
 <!-- ========== FOOTER ========== -->
 <footer>
   <div class="container">
@@ -1337,7 +1362,7 @@ footer .container {
     </div>
   </div>
 </footer>
-
+ 
 <script>
 // ========== THEME TOGGLE ==========
 // Initial theme is set in <head> to avoid flash. This handles click-to-toggle.
@@ -1352,16 +1377,16 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('abel-theme', 'light');
   }
 });
-
+ 
 // ========== NAV SCROLL STATE ==========
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 30);
 });
-
+ 
 // ========== YEAR ==========
 document.getElementById('year').textContent = new Date().getFullYear();
-
+ 
 // ========== REVEAL ON SCROLL ==========
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1371,9 +1396,10 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-
+ 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-
+ 
 </body>
 </html>
+ 
