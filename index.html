@@ -142,9 +142,14 @@ nav {
   z-index: 100;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  background: rgba(10, 10, 10, 0.85); /* fallback */
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s, background-color 0.4s;
+}
+:root[data-theme="light"] nav {
+  background: rgba(250, 250, 247, 0.85); /* fallback */
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
 }
 nav.scrolled { border-bottom-color: var(--border); }
 nav .container {
@@ -409,6 +414,11 @@ nav .container {
   margin-bottom: 1.4rem;
 }
 .about-body p strong { color: var(--text); font-weight: 500; }
+
+/* Mobile override for sticky sidebar — must come AFTER base .about-meta rule */
+@media (max-width: 900px) {
+  .about-meta { position: static; top: auto; }
+}
 
 /* ===================================================================
    MOTIVATION
@@ -954,6 +964,8 @@ footer .container {
 
 @media (max-width: 720px) {
   .theme-toggle { margin-left: auto; }
+  .hero h1 { line-height: 1.0; }
+  .hero { min-height: 100dvh; }
 }
 
 /* ===================================================================
